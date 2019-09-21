@@ -1,0 +1,8 @@
+<view class="page">
+  <view class="expressList">
+    <image class="expressLeftImg" src='/images/express.png' ></image>
+    <view class="expressRight">
+    888888
+    </view>
+  </view>
+</view>

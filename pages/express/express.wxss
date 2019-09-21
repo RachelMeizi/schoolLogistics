@@ -1,0 +1,12 @@
+/* pages/express/express.wxss */
+.expressList{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10rpx;
+
+}
+.expressLeftImg{
+  width: 200rpx;
+  height: 200rpx;
+}

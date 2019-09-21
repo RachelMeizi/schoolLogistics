@@ -1,0 +1,60 @@
+<!-- 顶部超市信息 -->
+<view>
+  <view class="top-shop">
+    <view class="shop-info">
+      <image class="shopImg" src='/images/shop2.png'></image>
+
+      <view class="shop-info-right">
+        <view>北区超市</view>
+        <view>送餐时间：15min|2km</view>
+        <view>阿大立科技打瞌睡的ndesc撒杰拉德就看上传非阿克苏决定拉黑的</view>
+      </view>
+    </view>
+  </view>
+  <view>
+  </view>
+
+</view>
+
+<!--主盒子-->
+<view class="container">
+  <!--左侧栏-->
+  <view class="nav_left">
+    <block wx:for="{{cateItems}}">
+      <!--当前项的id等于item项的id，那个就是当前状态-->
+      <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
+      <view class="nav_left_items {{curNav == item.cate_id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.cate_id}}">{{item.cate_name}}</view>
+    </block>
+  </view>
+  <!--右侧栏-->
+  <view class="nav_right">
+    <!--如果有数据，才遍历项-->
+    <view wx:if="{{cateItems[curIndex].ishaveChild}}">
+      <block wx:for="{{cateItems[curIndex].children}}">
+        <view class="nav_right_items">
+          <!--界面跳转 -->
+          <!-- <navigator url="../../detail/detail"> -->
+          <image class="goodImg" src="{{item.image}}"></image>
+          <text class="goodsName">{{item.name}}</text>
+          <view class="goodsSale-view">
+            <view class="goodsSale">月售{{item.saleNum}} </view>
+            <view class="goodsSale">库存{{item.stock}}{{item.base_unit_name}} </view>
+          </view>
+
+          <view class="goods-bottom">
+            <text class="goodsPrice">￥{{item.price}}</text>
+            <image class="jiaImg" data-item="{{item}}" data-index="{{index}}" src='/images/jia.png' catchtap="addGoods"></image>
+          </view>
+          <view class="goodsNum" wx:if="{{item.num!=''||item.num!=0}}">{{item.num}}</view>
+          <!-- </navigator> -->
+        </view>
+      </block>
+    </view>
+    <!--如果无数据，则显示数据-->
+    <view class="nodata_text" wx:else>该分类暂无数据</view>
+  </view>
+</view>
+<view class="shopping-basket" wx:if="{{cartGoods.length}}">
+  <tty-sh-basket goodsData="{{cartGoods}}" pageTotalMoney="{{filter.currencyFormat(pageTotalMoney)}}" pageTotalNum="{{cartGoods.length}}" bindBasketEvent="basketEvent" bindClearAll="clearAll" bindConfirm="confirm" my-btn="btn btn-success btn-right-angle"
+    my-basket="border border-top" my-basket-list="border border-bottom"></tty-sh-basket>
+</view>

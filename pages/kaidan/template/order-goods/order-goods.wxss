@@ -1,0 +1,33 @@
+.temp-goods{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1rpx #f2f2f2;
+    padding: 24rpx 30rpx;
+}
+.goodImg{
+  width: 80rpx;
+  height: 80rpx;
+  }
+  .goods_spec{
+    font-size: 24rpx;
+    color: gray;
+  }
+.temp-goods .temp-name{
+    /*width: 400rpx;*/
+    /*margin-right: 20rpx;*/
+    align-self: flex-start;
+    margin-right: 48rpx;
+}
+.temp-goods .right{
+    display: flex;
+    align-self: flex-start;
+}
+.temp-goods .right .temp-money{
+    margin-right: 16rpx;
+    white-space: nowrap;
+}
+.temp-goods .right .temp-amount{
+    white-space: nowrap;
+    color: #999;
+}

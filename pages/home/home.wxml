@@ -1,0 +1,22 @@
+<!--pages/home/home.wxml-->
+<view class='wrpg'>
+  <!-- 用户头像 -->
+  <view class="userinfo">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <!-- <image class="gender" src="/images/woman.png"></image> -->
+  </view>
+  <!-- 服务列表 -->
+  <view wx:for="{{subjectList}}" wx:key="">
+    <navigator url="{{item.url}}">
+      <view class='subjectList'>
+        <view>
+          <image src="{{item.icon}}"></image>
+          <text>{{item.comtent}}</text>
+        </view>
+        <image src='{{item.righIcon}}'></image>
+      </view>
+      <view style='{{item.h20}}'></view>
+    </navigator>
+  </view>
+</view>

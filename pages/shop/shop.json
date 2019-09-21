@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "tty-sh-basket": "/components/shopping-basket/shopping-basket"
+  }
+}

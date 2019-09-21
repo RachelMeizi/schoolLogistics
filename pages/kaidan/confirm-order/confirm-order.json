@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "开单",
+  "usingComponents": {
+        "van-cell": "/components/cell/index", 
+        "van-field": "/components/field/index",        
+    "tty-sh-basket": "../../../components/shopping-basket/shopping-basket"
+  }
+}

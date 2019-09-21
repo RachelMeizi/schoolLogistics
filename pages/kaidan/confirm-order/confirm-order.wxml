@@ -1,0 +1,42 @@
+<import src="../template/order-goods/order-goods.wxml" />
+<wxs src="../../../filter/filter.wxs" module="filter" />
+<view class="container">
+  <scroll-view scroll-y="true" class="scroller">
+    <view class='location-back' bindtap="onChooseAddress">
+      <view class='location'>
+        <view class='infomation' wx:if='{{addressInfo!=""}}'>
+          <view>
+            <image src='/images/address1.png'></image>
+          </view>
+          <view>
+            <text>{{addressInfo.name}}</text>
+            <text>{{addressInfo.phone}}</text>
+            <text>{{addressInfo.address}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="goods-list">
+      <view class="list-content">
+        <template is="order-goods" data="{{goodsData}}"></template>
+        <view class="total">
+          <text>合计：</text>
+          <text class="totalMoney">{{filter.currencyFormat(totalMoney)}}</text>
+        </view>
+      </view>
+       <van-cell title="运费"   value='{{freight}}' custom-class="discount"  />
+       <van-cell title="优惠"  value='-{{discount}}'  custom-class="discount"/>
+         <van-field value="{{ desc }}" label="备注" type="textarea" placeholder="想对商家说" autosize border="{{ false }}" clearable bindchange='onGetDesc' input-align='right'  border/>
+    </view>
+  </scroll-view>
+  <view class="footer border border-top">
+    <view class="total">
+      合计：
+      <view>{{filter.currencyFormat(totalMoney)}}</view>
+    </view>
+    <view>
+      <button class="btn btn-success collect-money" catchtap="collectMoney">收款</button>
+    </view>
+  </view>
+  <tty-dialog id="tty-mention-confirm" content-class="kaidan-height"></tty-dialog>
+</view>

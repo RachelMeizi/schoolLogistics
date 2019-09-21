@@ -1,0 +1,36 @@
+<view class='up-wrpg' wx:if="{{pages!='size'}}">
+  <view class='up-wrpg upload' data-isImg='true' bindtap='print'>
+    <view>
+      <text>照片上传</text>
+      <text>.jpeg,.jpg,.png</text>
+    </view>
+    <image src='/images/img.png'></image>
+  </view>
+  <view class='up-wrpg upload' data-isImg='false' bindtap='print'>
+    <view>
+      <text>文档打印</text>
+      <text>聊天文件一键打印</text>
+    </view>
+    <image src='/images/doc.png'></image>
+  </view>
+  <view class='up-wrpg upload'  bindtap='print'>
+    <view>
+      <text>其他打印</text>
+      <text>CAD出图，证件照打印，扫描等特殊业务</text>
+    </view>
+    <image src='/images/other.png'></image>
+  </view>
+</view>
+<view wx:else>
+  <view class="sizeList" wx:for='{{sizeList}}' wx:key='' bindtap="chooseSize" data-item="{{item}}" data-isImg='true'>
+    <view class="sizeLeft">
+    <text>{{item.title}}</text>
+    <text>寸</text>
+    </view>
+    <view class="sizeRight">
+      <view>{{item.title}}寸</view>
+      <view>{{item.size}}mm</view>
+      <view>去打印-></view>
+    </view>
+  </view>
+</view>

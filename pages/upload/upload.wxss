@@ -1,0 +1,89 @@
+/* pages/upload/upload.wxss */
+
+page {
+  height: 100%;
+  font-size: 30rpx;
+  background: #f2f2f2;
+  /* background-color: rgb(123, 166, 209); */
+}
+
+.sizeList {
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+  padding: 20rpx;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 30rpx;
+  background: #fff;
+}
+
+.sizeLeft {
+  border: 1rpx solid #ccc;
+  border-radius: 20rpx;
+  width: 180rpx;
+  height: 180rpx;
+  line-height:  180rpx;
+  padding: 10rpx;
+  color: rgb(252, 212, 55);
+  font-style: italic;
+  text-align: center;
+  margin: 10rpx;
+
+}
+
+.sizeLeft>text:first-child {
+  font-size: 100rpx;
+  font-weight: bold;
+}
+.sizeRight>view{
+  margin: 10rpx
+}
+.sizeRight>view:nth-child(1){
+font-size: 35rpx;
+font-weight: bold;
+}
+.sizeRight>view:nth-child(2){
+color: gray;
+font-size: 26rpx;
+}
+.sizeRight>view:nth-child(3){
+background: rgb(252, 212, 55);
+padding: 8rpx;
+}
+.up-wrpg {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+
+.upload>image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.upload {
+  width: 80%;
+  min-height: 150rpx;
+  background: #fff;
+  padding: 20rpx;
+  justify-content:space-between;
+  margin: 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 8rpx 8rpx 8rpx rgb(230, 226, 226);
+}
+
+.upload>view {
+  display: flex;
+  flex-flow: column;
+}
+
+.upload>view>text:first-child {
+  font-weight: bold;
+}
+
+.upload>view>text:last-child {
+  font-size: 22rpx;
+  color: gray;
+}

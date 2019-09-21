@@ -1,0 +1,9 @@
+{
+  "window": {
+    "navigationBarTitleText": "超市"
+  },
+  "usingComponents": {
+    "tty-linkage": "/components/linkage/linkage",
+    "tty-sh-basket": "/components/shopping-basket/shopping-basket"
+  }
+}
